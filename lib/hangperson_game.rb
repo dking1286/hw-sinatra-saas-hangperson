@@ -38,13 +38,14 @@ class HangpersonGame
   end
   
   def word_with_guesses
-    word.split('').map do |letter|
+    result = word.split('').map do |letter|
       if guesses.include? letter
         letter
       else
         '-'
       end
     end.join
+    result
   end
   
   def check_win_or_lose
