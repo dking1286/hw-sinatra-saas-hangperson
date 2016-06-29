@@ -21,11 +21,13 @@ class HangpersonGame
   end
   
   def guess letter
+    # Handle invalid guesses
     raise ArgumentError if letter.nil? || letter.empty?
     raise ArgumentError unless letter =~ /^[a-z]$/i
     
     small_letter = letter.downcase
     
+    # Handle repeated guesses
     return false if guesses.include? small_letter
     return false if wrong_guesses.include? small_letter
     
