@@ -42,9 +42,9 @@ class HangpersonApp < Sinatra::Base
     
     begin
       is_new_letter = @game.guess letter
-      flash[:message] = "You have already used that letter" unless is_new_letter
+      flash[:message] = "You have already used that letter." unless is_new_letter
     rescue ArgumentError # Should occur if the guessed letter is empty or nil
-      flash[:message] = "Invalid guess"
+      flash[:message] = "Invalid guess."
     end
     
     redirect '/show'
